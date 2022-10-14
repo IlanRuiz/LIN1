@@ -11,6 +11,7 @@ host_FILE="/etc/hosts"
 cat <<EOM >$host_FILE
 
 127.0.0.1       localhost
+127.0.1.1       SRV-LIN1-02
 127.0.1.1       SRV-LIN1-02.lin1.local
 
 
