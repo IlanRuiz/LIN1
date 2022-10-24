@@ -1,6 +1,5 @@
 #######################################
 # config dnsmasq
-apt-get install dnsmasq
 
 dnsmasq_FILE="/etc/dnsmasq.conf"
 cat <<EOM >$dnsmasq_FILE
