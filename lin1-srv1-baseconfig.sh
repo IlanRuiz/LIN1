@@ -45,37 +45,3 @@ nameserver 10.10.10.1
 
 EOM
 
-#######################################
-# config dnsmasq
-apt-get install dnsmasq
-
-dnsmasq_FILE="/etc/dnsmasq.conf"
-cat <<EOM >$dnsmasq_FILE
-
-addn-hosts=/etc/dnsmasq-hosts.conf
-dhcp-option=option:router,10.10.10.1
-dhcp-option=option:dns-server,10.10.10.11
-dhcp-option=option:domain-name,lin1.local
-
-EOM
-
-#######################################
-# config SSH
-
-mkdir .ssh
-touch /.ssh/authorized_keys
-
-key_FILE="/.ssh/authorized_keys"
-cat <<EOM >$key_FILE
-
-ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJ8PjC1k6uYW/lI230p1U5P/lsC2KFqzNjIHw88M2ssFWLfaYCFElP44YvtNep8pm+CmGYUAuvgP/9NWYjtSW2Y= ecdsa-key-20221024
-
-EOM
-
-sshconf_FILE="/etc/ssh/sshd_config"
-cat <<EOM >$sshconf_FILE
-
-PasswordAuthentication yes
-PermitEmptyPasswords no
-
-EOM
