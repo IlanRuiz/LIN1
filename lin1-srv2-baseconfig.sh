@@ -32,7 +32,7 @@ auto ens33
 iface ens33 inet static
 address 10.10.10.22
 netmask 255.255.255.0
-gateway 10.10.10.2
+gateway 10.10.10.1
 
 EOM
 
@@ -45,6 +45,6 @@ cat <<EOM >$resolv_FILE
 domain lin1.local
 search lin1.local
 nameserver 10.10.10.11
-nameserver 10.10.10.2
+nameserver 10.10.10.1
 
 EOM
